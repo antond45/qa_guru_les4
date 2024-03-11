@@ -62,16 +62,17 @@ public class TestPracticeForm {
         $("#submit").click();
 
         //form-reg
-        $(".table-responsive").shouldHave(text("Anton Test"));
-        $(".table-responsive").shouldHave(text("anton@tests.test"));
-        $(".table-responsive").shouldHave(text("Male"));
-        $(".table-responsive").shouldHave(text("8917555575"));
-        $(".table-responsive").shouldHave(text("14 February,1997"));
-        $(".table-responsive").shouldHave(text("Maths"));
-        $(".table-responsive").shouldHave(text("Sports"));
-        $(".table-responsive").shouldHave(text("Screenshot_5.png"));
-        $(".table-responsive").shouldHave(text("Some address"));
-        $(".table-responsive").shouldHave(text("Uttar Pradesh Agra"));
+        $(".table-responsive")
+                .shouldHave(text("Anton Test"))
+                .shouldHave(text("anton@tests.test"))
+                .shouldHave(text("Male"))
+                .shouldHave(text("8917555575"))
+                .shouldHave(text("14 February,1997"))
+                .shouldHave(text("Maths"))
+                .shouldHave(text("Sports"))
+                .shouldHave(text("Screenshot_5.png"))
+                .shouldHave(text("Some address"))
+                .shouldHave(text("Uttar Pradesh Agra"));
     }
 
 }
