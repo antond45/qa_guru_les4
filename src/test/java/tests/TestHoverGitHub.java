@@ -35,7 +35,7 @@ public class TestHoverGitHub {
     }
 
     //Task2
-   // Запрограммируйте Drag&Drop с помощью Selenide.actions()
+    // Запрограммируйте Drag&Drop с помощью Selenide.actions()
 
     @Test
     void testDragAndDropActions(){
