@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -34,16 +35,18 @@ public class TetsGitHub {
         // Откройте страницу SoftAssertions
         $(byId("wiki-pages-box")).$(byText("SoftAssertions")).click();
         // Проверьте что внутри есть пример кода для JUnit5
-        $(".markdown-body"). shouldHave((text("@ExtendWith({SoftAssertsExtension.class})\n" +
-                "class Tests {\n" +
-                "  @Test\n" +
-                "  void test() {\n" +
-                "    Configuration.assertionMode = SOFT;\n" +
-                "    open(\"page.html\");\n" +
-                "\n" +
-                "    $(\"#first\").should(visible).click();\n" +
-                "    $(\"#second\").should(visible).click();\n" +
-                "  }\n" +
-                "}")));
+        $("#wiki-body").shouldHave(text("""
+                @ExtendWith({SoftAssertsExtension.class})
+                class Tests {
+                  @Test
+                  void test() {
+                    Configuration.assertionMode = SOFT;
+                    open("page.html");
+
+                    $("#first").should(visible).click();
+                    $("#second").should(visible).click();
+                  }
+                }
+                """)).shouldBe(visible);
     }
 }
