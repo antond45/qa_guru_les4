@@ -1,5 +1,3 @@
-package tests;
-
 public class TestMathExamples {
     public static void main(String[] args) {
         //    1) поупражняться с математическими и логическими операторами, добиться переполнения при вычислениях, посмотреть результаты (вывести в консоль)
@@ -14,6 +12,9 @@ public class TestMathExamples {
             }
         }
 
+        a = (short)(a+1);
+        System.out.println(a);
+
         boolean b_a = true;
         boolean b_b = false;
 
@@ -21,10 +22,26 @@ public class TestMathExamples {
             System.out.println("true");
         }else System.out.println("false");
 
+
+        int iValue = 5;
+        double dValue = 3.14;
+        dValue += iValue;
+        System.out.println("double + int: " + dValue);
+
 //    2) попробовать вычисления комбинаций типов данных (int и double)
         double d_a = 3/2;
         int i_a = 2;
         System.out.println(d_a+i_a);
+
+        int i_c = 5;
+        double d_v = 3.14;
+        d_v += i_c;
+        System.out.println("double + int: " + d_v);
+
+        i_c = 5;
+        d_v = 3.14;
+        i_c += d_v;
+        System.out.println("int + double: " + i_c);
     }
 
 }
